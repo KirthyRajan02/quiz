@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIGNMENT-I</title>
 
+    <!-- css file link -->
+    <link rel="shortcut icon" type="x icon" href="SA.png">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <form action="https://sheetdb.io/api/v1/ypl9zywwn4jcc" method="post" id="sheetdb-form"  >
+
+    <div id="timer">&nbsp;<center><b>TIME ALLOTTED: 40:00 minutes</b></center></b><br>
+    </div>
+    <img src="SA.png" alt="img" id="img" class="img">
+    <h1 id="title">TITLE</h1>
+
+    <!-- quiz-container -->
+    <div id="quiz-container">
+        <!-- question container -->
+        <div class="questions">
+            <h2 id="question"></h2>
+            <ol type="A">
+                <li class="option"><span id="option0" onclick="calcScore(this)"></span></li>
+                <li class="option"><span id="option1" onclick="calcScore(this)"></span></li>
+                <li class="option"><span id="option2" onclick="calcScore(this)"></span></li>
+                <li class="option"><span id="option3" onclick="calcScore(this)"></span></li>
+            
+            </ol>
+            <h4 id="stat"></h4>
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="next"><b>SKIP</b></button>
+        </div>
+
+    </div>
+
+    <!-- scoreboard section -->
+    <div id="scoreboard">
+        <img src="done.jpg" alt="">
+        <h2 id="score-title">Your Score</h2>
+        <h2 id="score"></h2>
+        <a href="page2.html"><button type="button" id="score-btn">Submit</button>
+       </a>
+        
+    </div>
+
+    <!-- answers section -->
+    <div id="answerBank">
+        <h2>Answers :</h2>
+        <ol type="1" id="answers">
+
+        </ol>
+        
+    </div>
+
+    <!-- javascript file source -->
+   
+    <script src="quiz.js"></script>
+</body>
+</html>
