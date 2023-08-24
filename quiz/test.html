@@ -1,0 +1,438 @@
+<html>
+    <head>
+        <title> ASSIGNMENT-I</title>
+        <link rel="shortcut icon" type="x-icon" href="SA.png">
+        
+        <style>
+            body{
+                background-color:rgb(246, 239, 239)
+            }
+        .parent
+        {
+            background-color:rgba(222, 8, 8, 0.797);
+            color:white;
+        }
+        .answer
+        {
+            background-color:rgba(255, 255, 255, 0.918);
+            color:rgb(0, 0, 0);
+            font-size:17;
+            font-weight:bold;
+            
+        }
+        .question
+        {
+            text-transform:uppercase;
+            text-align:left;
+            font-size:9;
+        }
+        button
+        {
+            margin:5;
+            font-weight: bold;
+            font-size:20;
+            color:blue;
+
+        }
+        marquee
+        {
+            text-transform:uppercase;
+            font-size:40;
+            font-weight: bold;
+            color:blue;
+        }
+        .personal_details
+        {
+            font-size:16;
+            color: black;
+            font-weight: bold;
+            background-color: antiquewhite;
+        }
+        .personal_details_table
+        {
+            text-align: center;
+            font-size:14;
+            color: black;
+            font-weight: bold;
+        }
+        .top_content
+        {
+            text-align: center;
+            color: green;
+        }
+        .title_1
+        {
+            text-align: center;
+            font-size:30;
+            color:blueviolet;
+            font-weight: bold;
+        }
+        .time{
+            text-align:right;
+            font-size: 20;
+            font-weight: bold;
+            
+        }
+        .instruction_details
+        {
+            font-size:16;
+            color: black;
+            font-weight: bold;
+            background-color: antiquewhite;
+        }
+        </style>
+    </head>
+    <body>
+        <div id=main>
+            
+        </div>
+        <div class="button" style="text-align:center"><br>
+            <button onclick="press()"> END TEST </button>
+        </div><br>
+        <hr>
+        
+        <div class=personal_details_table>
+            <h2>DETAILS</h2>
+        <center>
+        <table id="main_1" border="4" cellpadding=4 cellspacing=8>
+            <tr> 
+            <th>STUDENT NAME</th>
+            <th>MAIL ID</th>
+            <th>CLASS</th>
+            <th>YEAR</th>
+            <th>COLLEGE NAME</th>
+            </tr>
+        </table>
+        </center>
+           
+        </div>
+        <hr>
+                
+        <script>
+        database=[
+            {question:"1. Software project manager is engaged with software management activities. He is responsible for",
+            choice1:{answer:"Project planning",value:2},
+            choice2:{answer:"Monitoring the process",value:4},
+            choice3:{answer:"Communication among stakeholders",value:3},
+            choice4:{answer:"All mentioned above",value:1}},
+
+            {question:"2. Which of the following is not a characteristic of a software project",
+            choice1:{answer:"Project is complex and large",value:4},
+            choice2:{answer:"Project has a pre-determined time span",value:2},
+            choice3:{answer:"Routine tasks are involved",value:1},
+            choice4:{answer:"Project is carried out for others",value:3}},
+
+            {question:"3. Choose the correct order of activities covered by software project management",
+            choice1:{answer:"Planning, Analysis, Feasibility and Execution",value:3},
+            choice2:{answer:"Requirement elicitation, Analysis, Planning and Execution",value:4},
+            choice3:{answer:"Feasibility, Planning, Design and Execution",value:1},
+            choice4:{answer:"Execution, Planning, Feasibility and Design",value:2}},
+
+            {question:"4. Who identified the characteristics to differentiate between s/w projects and other type of projects",
+            choice1:{answer:"Fred Brooks",value:1},
+            choice2:{answer:"Bob Hughes",value:4},
+            choice3:{answer:"Mike Cotrell",value:3},
+            choice4:{answer:"None of the above",value:2}},
+
+            {question:"5. Which is the next step after PFD – Product Flow Diagram ?",
+            choice1:{answer:"Product breakdown structure",value:4},
+            choice2:{answer:"Ideal activity network",value:1},
+            choice3:{answer:"Work breakdown structure",value:2},
+            choice4:{answer:"None of the above",value:3}},
+
+            {question:"6. What should be done by the project manager to ensure that all work in the project is included ?",
+            choice1:{answer:"Create a contingency plan",value:4},
+            choice2:{answer:"Create a WBS",value:1},
+            choice3:{answer:"Create a risk management plan",value:2},
+            choice4:{answer:"Create a scope statement",value:3}},
+
+            {question:"7. Technique used to frame Objectives and Sub Objectives of a Project",
+            choice1:{answer:"PBS–Product Breakdown Structure",value:2},
+            choice2:{answer:"PFD–Product Flow Diagram",value:3},
+            choice3:{answer:"SMART–Special Measurable Accepted Real-time Task",value:4},
+            choice4:{answer:"SMART–Specific Measurable Achievable Relevant Time constrained",value:1}},
+
+            {question:"8. What should a project manager do or follow to ensure clear boundaries for project completion ?",
+            choice1:{answer:"Completing a scope statement",value:1},
+            choice2:{answer:"Scope verification",value:2},
+            choice3:{answer:"Scope definition",value:3},
+            choice4:{answer:"Risk management plan",value:4}},
+
+            {question:"9. What does the acronym SMART stand for ?",
+            choice1:{answer:"Suitable, measurable, actionable, relevant, time constrained",value:4},
+            choice2:{answer:"Specific, measurable, actionable, resourced, time constrained",value:2},
+            choice3:{answer:"Standardised, measurable, achievable, relevant, time constrained",value:3},
+            choice4:{answer:"Specific, measurable, achievable, relevant, time constrained",value:1}},
+
+            {question:"10. Which one of the following is an appropriate sequence of steps in project planning ?",
+            choice1:{answer:"Develop product breakdown structure, develop activity network, estimate effort and allocate resource",value:1},
+            choice2:{answer:"Develop activity network, develop product breakdown structure, estimate effort and allocate resource",value:4},
+            choice3:{answer:"Develop product breakdown structure, estimate effort, develop activity network and allocate resource",value:3},
+            choice4:{answer:"Allocate resource, develop product breakdown structure, develop activity network and estimate effort",value:2}},
+
+            {question:"11. Actor-Technology–Structure–Task is factors of which of the following",
+            choice1:{answer:"Project Plan",value:3},
+            choice2:{answer:"Corrective Action",value:2},
+            choice3:{answer:"Socio technical model of risk",value:1},
+            choice4:{answer:"Scope statement",value:4}},
+
+            {question:"12. Arrange the following steps to form a basic/general Engineering Process model<br><br>1. Test <br>2. Design <br>3. Install <br>4. Specification <br>5. Develop <br>6. Maintain",
+            choice1:{answer:"2 , 4 , 5 , 1 , 3 , 6",value:2},
+            choice2:{answer:"4 , 2 , 5 , 1 , 3 , 6",value:1},
+            choice3:{answer:"4 , 2 , 5 , 1 , 6 , 3",value:4},
+            choice4:{answer:"2 , 4 , 5 , 1 , 6 , 3",value:3}},
+
+            {question:"13. The statement “The project may exceed the budget but later the product attracts a lot of customers and makes good business” refers to ________",
+            choice1:{answer:"Project Success but a Business Failure",value:2},
+            choice2:{answer:"Project Failure but a Business Success",value:1},
+            choice3:{answer:"Project Success and also Business Success",value:4},
+            choice4:{answer:"None of the above",value:3}},
+
+            {question:"14. ________ merges several projects",
+            choice1:{answer:"Strategic programmes",value:1},
+            choice2:{answer:"Business cycle programmes",value:2},
+            choice3:{answer:"Project manager",value:3},
+            choice4:{answer:"Benefits management",value:4}},
+
+            {question:"15. ________ manages one project at a time.",
+            choice1:{answer:"Strategic programmes",value:4},
+            choice2:{answer:"Business cycle programmes",value:2},
+            choice3:{answer:"Benefits management",value:3},
+            choice4:{answer:"Project manager",value:1}},
+
+            {question:"16. Which one of the following best defines a project portfolio of a software development organization ?",
+            choice1:{answer:"All projects being carried out by the organization for a specific customer",value:3},
+            choice2:{answer:"All projects that are being carried out within an organization",value:1},
+            choice3:{answer:"All projects that have been started in the same financial year",value:2},
+            choice4:{answer:"A range of products and services offered the organization",value:4}},
+
+            {question:"17. ________ is the difference between the total costs and the total income over the life of the project",
+            choice1:{answer:"Payback period",value:4},
+            choice2:{answer:"Net profit",value:1},
+            choice3:{answer:"Net present value",value:3},
+            choice4:{answer:"Internal rate of return",value:2}},
+
+            {question:"18. ________ is the time taken to break even or pay back the initial investment.",
+            choice1:{answer:"Net present value",value:3},
+            choice2:{answer:"Net profit",value:2},
+            choice3:{answer:"Payback period",value:1},
+            choice4:{answer:"Internal rate of return",value:4}},
+
+            {question:"19. ________ compares the net profit ability to the investment required.",
+            choice1:{answer:"Net profit",value:4},
+            choice2:{answer:"Internal rate of return",value:3},
+            choice3:{answer:"Return on investment",value:1},
+            choice4:{answer:"Net present value",value:2}},
+
+            {question:"20. ________ takes into account profitability of a project and the timing of the cash flows that are produced.",
+            choice1:{answer:"Net present value",value:1},
+            choice2:{answer:"Net profit",value:3},
+            choice3:{answer:"Internal rate of return",value:2},
+            choice4:{answer:"Return on investment",value:4}},
+
+            {question:"21. ________ is the discount rate that would produce an NPV of zero for the project.",
+            choice1:{answer:"Net present value",value:4},
+            choice2:{answer:"Net profit",value:3},
+            choice3:{answer:"Return on investment",value:2},
+            choice4:{answer:"Internal rate of return",value:1}},
+            
+            {question:"22. When the IRR is equal to the discount rate, what can be said about the NPV ?",
+            choice1:{answer:"It would be positive",value:2},
+            choice2:{answer:"It would be equal to zero",value:1},
+            choice3:{answer:"It would be negative",value:3},
+            choice4:{answer:"It cannot be determined without knowing the exact discount rate",value:4}},
+
+            {question:"23. Which of the following technique considers the interest taken from capital",
+            choice1:{answer:"Net profit",value:2},
+            choice2:{answer:"ARR",value:1},
+            choice3:{answer:"Payback period",value:3},
+            choice4:{answer:"NPV",value:4}},
+
+            {question:"24. What is (Average Annual Profit/Total Investment)*100 ?",
+            choice1:{answer:"IRR",value:4},
+            choice2:{answer:"ROI",value:3},
+            choice3:{answer:"ARR",value:2},
+            choice4:{answer:"Both B and C",value:1}},
+
+            {question:"25. Suppose the feasibility study of a software project shows that the project would cost $150,000 to complete and the expected profit per year after project completion is $150,000, taking 5years. What would be the annual return on investment(ROI) if the project is undertaken ?",
+            choice1:{answer:"1%",value:3},
+            choice2:{answer:"10%",value:2},
+            choice3:{answer:"20%",value:1},
+            choice4:{answer:"30%",value:4}},
+
+            {question:"26. Suppose a software development company has undertaken a project that is expected to cost $160,000 to execute and the expected in flow is $25,000 per quarter for the first year, $30,000 per quarter thereafter. What is the payback period for the project ?",
+            choice1:{answer:"18 months",value:1},
+            choice2:{answer:"19 months",value:4},
+            choice3:{answer:"24 months",value:3},
+            choice4:{answer:"25 months",value:2}},
+
+            {question:"27. Which one of the following SDLC models can be considered to be the most effective for determination of the exact customer requirements ?",
+            choice1:{answer:"V model",value:3},
+            choice2:{answer:"Iterative waterfall model",value:2},
+            choice3:{answer:"Classical waterfall model",value:4},
+            choice4:{answer:"RAD model",value:1}},
+
+            {question:"28. Which one of the following statements is not true for the waterfall model",
+            choice1:{answer:"No provision for risk handling",value:4},
+            choice2:{answer:"Includes a customer representative in the team",value:1},
+            choice3:{answer:"Phases are sequential, no provision for overlapped phases",value:2},
+            choice4:{answer:"No provision for incremental development",value:3}},
+
+            {question:"29. Which one of the following phases accounts for the maximum effort during the development of typical software ?",
+            choice1:{answer:"Specification",value:3},
+            choice2:{answer:"Testing",value:1},
+            choice3:{answer:"Designing",value:2},
+            choice4:{answer:"Coding",value:4}},
+
+            {question:"30. Change requests from customers later in the development cycle are the easiest to handle in which one of the following lifecycle models ?",
+            choice1:{answer:"V model",value:3},
+            choice2:{answer:"Evolutionary model",value:4},
+            choice3:{answer:"Iterative waterfall model",value:1},
+            choice4:{answer:"Prototyping model",value:2}},
+            ]
+
+            
+        
+        content=`<hr><div id="timer"><center> <button onclick="startTimer()">START TIMER</button><br><b>TIME ALLOTTED: 30:00 minutes</b></center></div><hr>
+            <div class=top_content>
+            <h1>S. A. ENGINEERING COLLEGE</h1>
+                        
+            <h4>(An Autonomous Institution Affiliated to Anna University Chennai)</h4>
+            </div>
+            <marquee>DEPARTMENT OF COMPUTER APPLICATIONS</marquee>
+            <div class=title_1>
+                MC2001A - SOFTWARE PROJECT MANAGEMENT ASSESSMENT
+            </div><br><hr>
+            <div class=personal_details><center>
+                 STUDENT NAME: <input id=stu>
+                 MAIL-ID: <input id=mail>
+                CLASS: <select id=course>
+                        <option>Select</option>
+                        <option>MCA</option>
+                        </select>
+                YEAR: <select id=year>
+                        <option>Select</option>
+                        <option>I</option>
+                        </select>
+                COLLEGE NAME: <input id=college_name></center>
+            </div>
+            <hr><br><div class=instruction_details>
+                INSTRUCTIONS:<br><BR>&nbsp;&emsp;&emsp;&emsp;
+                    * Fill the above details carefully.<br><BR>&nbsp;&emsp;&emsp;&emsp;
+                    * Dont forget to start the timer by clicking on the [Start Timer] button at the top.<BR>&nbsp;&emsp;&emsp;&emsp;
+                
+            </div><br>`
+        for(i=0;i<database.length;i++)
+        {
+        content= content+`
+        <div class=parent>
+            <div class=question>
+                <h1>${database[i].question}</h1>
+            </div>
+            <div class=answer>
+            <input type=radio name="chioce${i}" id="chioce1_${i}" value=${database[i].choice1.value}>${database[i].choice1.answer}<br>
+            <input type=radio name="chioce${i}" id="chioce2_${i}" value=${database[i].choice2.value}>${database[i].choice2.answer}<br>
+            <input type=radio name="chioce${i}" id="chioce3_${i}" value=${database[i].choice3.value}>${database[i].choice3.answer}<br>
+            <input type=radio name="chioce${i}" id="chioce4_${i}" value=${database[i].choice4.value}>${database[i].choice4.answer}
+
+            </div>
+        </div>`
+        }
+        document.getElementById("main").innerHTML=content
+        
+        function press()
+        {
+            count=0
+            for(i=0;i<database.length;i++)
+            {
+                ip1_ref=document.getElementById(`chioce1_${i}`)
+                ip2_ref=document.getElementById(`chioce2_${i}`)
+                ip3_ref=document.getElementById(`chioce3_${i}`)
+                ip4_ref=document.getElementById(`chioce4_${i}`)
+                result=false
+                if(ip1_ref.checked && ip1_ref.value=="1")
+                {
+                    result=true
+                }
+                else if(ip2_ref.checked && ip2_ref.value=="1")
+                {
+                    result=true
+                }
+                else if(ip3_ref.checked && ip3_ref.value=="1")
+                {
+                    result=true
+                }
+                else if(ip4_ref.checked && ip4_ref.value=="1")
+                {
+                    result=true
+                }
+                if(result)
+                {
+                    count++
+                }
+                
+               
+            }
+            alert("Successfully Completed your Assignment!!")
+            alert("Please don't close the screen")
+            //alert(count)
+            console.log(count)
+                participant_val_1=document.getElementById('stu').value
+                participant_val_2=document.getElementById('mail').value
+                course_val=document.getElementById('course').value
+                year_val=document.getElementById('year').value
+                college_name_val=document.getElementById('college_name').value
+                
+                table_row=document.createElement('tr')
+                
+                participant_data_1=document.createElement('td')
+                participant_data_1.innerHTML=participant_val_1
+                
+                participant_data_2=document.createElement('td')
+                participant_data_2.innerHTML=participant_val_2
+                
+                course_data=document.createElement('td')
+                course_data.innerHTML=course_val
+
+                year_data=document.createElement('td')
+                year_data.innerHTML=year_val
+
+                college_name_data=document.createElement('td')
+                college_name_data.innerHTML=college_name_val
+                
+                table_row.appendChild(participant_data_1)
+                table_row.appendChild(participant_data_2)
+                table_row.appendChild(course_data)
+                table_row.appendChild(year_data)
+                table_row.appendChild(college_name_data)
+                
+                document.getElementById('main_1').appendChild(table_row)
+        
+        }
+        var startTime;
+        var timerInterval;
+        var duration = 1 * 60 * 1000; // 30 minutes in milliseconds
+
+        function startTimer() {
+        startTime = Date.now();
+        timerInterval = setInterval(updateTimer, 1000);
+      }
+                
+        function updateTimer() {
+        var elapsedTime = duration - (Date.now() - startTime);
+       
+        var minutes = Math.floor((elapsedTime % (60 * 60 * 1000)) / (60 * 1000)).toString().padStart(2, '0');
+        var seconds = Math.floor((elapsedTime % (60 * 1000)) / 1000).toString().padStart(2, '0');
+        document.getElementById("timer").innerHTML ="<b><center>REMAINING TIME: "+ minutes + ":" + seconds +" minutes";
+        if (elapsedTime < 0) {
+          clearInterval(timerInterval);
+          document.getElementById("timer").innerHTML = "00:00";
+          alert("Time's up!");
+        }
+      }
+
+
+        </script>
+        
+    </body>
+</html>
